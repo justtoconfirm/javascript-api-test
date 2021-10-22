@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
+import Search from './components/Search';
 
 const App = () => {
 
@@ -22,6 +23,24 @@ const App = () => {
             );
     }, []);
 
+
+    const search = searchValue => {
+        setLoading(true);
+        setErrorMessage(null);
+
+        fetch(`https://api.punkapi.com/v2/beers/?=$"{searchValue}"`)
+        .then(response => response.json())
+        .then(jsonResponse => {
+            if (jsonResponse.Response === "True") {
+                setMovies(jsonResponse.Search);
+                setLoading(false);
+            } else {
+                setErrorMessage(jsonResponse.Error);
+                setLoading(false);
+            }
+        })
+    }
+
     return (
 
         <Layout>
@@ -31,7 +50,9 @@ const App = () => {
 
                     <section>
                     
-                        <h1>Hello World</h1>
+                        <h1>Beer API</h1>
+
+                        <Search search={search} />
 
                         {items.map((item) => (
                             console.log(item)
