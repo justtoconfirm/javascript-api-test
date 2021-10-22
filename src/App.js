@@ -6,7 +6,13 @@ const App = () => {
 
         <Layout>
             
-            <h1>Hello World</h1>
+            <div className="container">
+                <div className="row">
+
+                    <h1>Hello World</h1>
+
+                </div>
+            </div>
         
         </Layout>
     

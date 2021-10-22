@@ -3,7 +3,15 @@ import React from 'react';
 const Footer = () => {
 	return (
 
-		<p>&copy; {new Date().getFullYear()}.</p>
+		<footer>
+			<div className="container">
+                <div className="row">
+
+					<p>&copy; {new Date().getFullYear()}.</p>
+
+				</div>
+			</div>
+		</footer>
 	
 	);
 }
