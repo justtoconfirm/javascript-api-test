@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
 	return (
@@ -10,9 +11,7 @@ const Layout = ({ children }) => {
 
 			</main>
 
-			<footer>
-				&copy; {new Date().getFullYear()}
-			</footer>
+			<Footer />
 		</>
 
 	);
